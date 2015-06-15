@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="Test-Resources"
+           tests="1"
+           failures="0"
+           errors="0"
+           skipped="0"
+           time="15.579">
+  <properties />
+  
+  
+            <testcase name="test01CreateResource" time="15.579" classname="roomManager.test.admin.CreateResource" />
+      
+</testsuite>
