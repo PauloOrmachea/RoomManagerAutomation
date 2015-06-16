@@ -1,76 +1,90 @@
-
 package roomManager.test.admin;
 
 import java.util.concurrent.TimeUnit;
-import org.junit.*;
 import static org.junit.Assert.*;
 import org.openqa.selenium.*;
-import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
-import roomManager.util.ConfigReader;
-import roomManager.pages.admin.*;
+import org.testng.annotations.Test;
+
+//Libraries for the Log files
 import org.apache.log4j.Logger;
 import org.apache.log4j.PropertyConfigurator;
-/*
- * Acceptance Test
- * For create a new Resource
- */
 
-public class AcceptanceTest01{
+
+public class AcceptanceTest01 {
   private static WebDriver driver;
-  private static String baseUrl;
+  private String baseUrl;
+  private StringBuffer verificationErrors = new StringBuffer();
 
-  
-  @Test
-  public void testRoomManagerCreateAResource(){
-	
-	Logger logger=Logger.getLogger("testRoomManagerCreateAResource");
-    PropertyConfigurator.configure("Log4j.properties");
-	
-    driver.get(baseUrl + "/admin//#//login");
-    logger.info("Se abre el login page");
-/*    
+  @Test  (priority=0)
+  public void test01CreateResource() throws Exception {
+	  
+	  Logger logger=Logger.getLogger("test01CreateResource");
+	  PropertyConfigurator.configure("resources\\Log4j.properties");
+	  
+	driver.get(baseUrl + "/admin/#/login");
+	logger.info("Se abre el login page");
+	driver.findElement(By.cssSelector("input[type=\"text\"]")).clear();
+    driver.findElement(By.cssSelector("input[type=\"text\"]")).sendKeys("User");
+    logger.info("Se introduce el username");
+    driver.findElement(By.cssSelector("input[type=\"password\"]")).clear();
+    driver.findElement(By.cssSelector("input[type=\"password\"]")).sendKeys("Pass");
+    logger.info("Se introduce el password");
+    (new WebDriverWait(driver, 60)).until(ExpectedConditions.elementToBeClickable(By.xpath("//button")));
+    driver.findElement(By.xpath("//button")).click();
+    logger.info("Se clickea en el boton enviar");
     driver.findElement(By.linkText("Resources")).click();
-    
-    driver.findElement(By.id("convert")).click();
-
-    (new WebDriverWait(driver,20)).until(ExpectedConditions.elementToBeClickable(By.xpath("//button[@value='fa-eraser']")));
-    driver.findElement(By.xpath("//button[@value='fa-eraser']")).click();
-
-    driver.findElement(By.xpath("(//input[@type='text'])[4]")).sendKeys("SeleniumTest01");
+    (new WebDriverWait(driver, 60)).until(ExpectedConditions.elementToBeClickable(By.xpath("//div/div/button")));
+    logger.info("Se clickea en la pestana de resources");
+    driver.findElement(By.xpath("//div/div/button")).click();
+    logger.info("Se clickea en el boton Add");
+    driver.findElement(By.xpath("(//input[@type='text'])[3]")).clear();
+    driver.findElement(By.xpath("(//input[@type='text'])[3]")).sendKeys("Selenium001");
+    logger.info("Se introduce el nombre del recurso");
+    driver.findElement(By.xpath("(//input[@type='text'])[4]")).clear();
+    driver.findElement(By.xpath("(//input[@type='text'])[4]")).sendKeys("Selenium001");
+    logger.info("Se introduce el displayname del recurso");
     driver.findElement(By.xpath("//textarea")).clear();
-    driver.findElement(By.xpath("//textarea")).sendKeys("TEst borrame");
-
-    (new WebDriverWait(driver,20)).until(ExpectedConditions.elementToBeClickable(By.xpath("button.info")));
-
+    driver.findElement(By.xpath("//textarea")).sendKeys("Borrame");
+    logger.info("Se introuce la descripcion");
+    (new WebDriverWait(driver, 60)).until(ExpectedConditions.elementToBeClickable(By.cssSelector("button.info")));
     driver.findElement(By.cssSelector("button.info")).click();
-  */ 
+    logger.info("Se clickea en el boton SAVE");
+    driver.findElement(By.xpath("//input[@type='text']")).clear();
+    driver.findElement(By.xpath("//input[@type='text']")).sendKeys("Selenium001");
+    assertTrue(isElementPresent(By.xpath("//div[@id='resourcesGrid']/div[2]/div/div/div[2]/div[2]/div")));
+    logger.info("Se verifica que exista el recurso creado");
   }
 
   @BeforeTest
-  public void beforeTest() {
-	  System.setProperty("webdriver.chrome.driver", ConfigReader.getChromeDriver());
-	  //driver = new FirefoxDriver();
-	  //baseUrl = configReader.getAdminURL();
-	  driver = new ChromeDriver();
-	  baseUrl = "http://172.20.208.174:4042/";
-	  driver.manage().window().maximize();
-  }  
- 
-
-  @AfterTest
-  public void afterTest() {
-	  driver.quit();
+  public void setUp() throws Exception {
+    driver = new FirefoxDriver();
+    baseUrl = "http://172.20.208.174:4041/";
+    driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
   }
   
+  @AfterTest
+  public void tearDown() throws Exception {
+    driver.quit();
+    String verificationErrorString = verificationErrors.toString();
+    if (!"".equals(verificationErrorString)) {
+      fail(verificationErrorString);
+    }
+  }
 
-} 
-
-
+  private boolean isElementPresent(By by) {
+    try {
+      driver.findElement(by);
+      return true;
+    } catch (NoSuchElementException e) {
+      return false;
+    }
+  }
+}
 
 
 

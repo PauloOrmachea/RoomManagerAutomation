@@ -25,7 +25,9 @@ public class AddResourcesPage {
 		WebElement resourceNameTextField = (new WebDriverWait(driver, 60))
 			.until(ExpectedConditions.presenceOfElementLocated(addResourceNameTextFieldLocator));
 		resourceNameTextField.sendKeys(resourceName);
+		
 		return this;
+		
 	}
 	
 	public AddResourcesPage enterResourceDisplayName(String resourceDisplayName){

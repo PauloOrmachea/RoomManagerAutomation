@@ -7,27 +7,15 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 public class WebDriverConfig {
 	
 	private static WebDriverConfig instance = new WebDriverConfig();
+	private static WebDriver driver;
+	private WebDriverConfig(){}
 	
-	private static WebDriver driver = null;
-	
-	private WebDriverConfig(){
-		
+	public static WebDriverConfig getInstance(){
+		driver = null;
+		return instance;
 	}
-	/*
-	 * We don't need a external driver for work with Firefox
-	 */
-	public static WebDriver firefoxDriver(){
-		if(driver == null){
-			driver = new FirefoxDriver();
-			driver.manage().window().maximize();
-		}
-		return driver;
-	}
-	/*
-	 * For work with Chrome we need a external driver locate in the resources folder 
-	 */
 	
-	public static WebDriver chromeDriver(){
+	public static WebDriver getChromeDriver(){
 		if(driver == null){
 			System.setProperty("webdriver.chrome.driver", ConfigReader.getChromeDriver());
 			driver = new ChromeDriver();
@@ -35,8 +23,12 @@ public class WebDriverConfig {
 		}
 		return driver;
 	}
-	
-	public static WebDriverConfig getInstance(){
-		return instance;
+
+	public static WebDriver getFirefoxDriver(){
+		if(driver == null){
+			driver = new FirefoxDriver();
+			driver.manage().window().maximize();
+		}
+		return driver;
 	}
 }

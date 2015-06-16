@@ -9,3 +9,13 @@
 2015-06-15 18:12:22,581 - test01CreateResource -INFO - Se introuce la descripcion
 2015-06-15 18:12:23,315 - test01CreateResource -INFO - Se clickea en el boton SAVE
 2015-06-15 18:12:24,366 - test01CreateResource -INFO - Se verifica que exista el recurso creado
+2015-06-16 18:21:40,367 - test01CreateResource -INFO - Se abre el login page
+2015-06-16 18:21:42,372 - test01CreateResource -INFO - Se introduce el username
+2015-06-16 18:21:43,013 - test01CreateResource -INFO - Se introduce el password
+2015-06-16 18:21:43,716 - test01CreateResource -INFO - Se clickea en el boton enviar
+2015-06-16 18:21:46,286 - test01CreateResource -INFO - Se clickea en la pestana de resources
+2015-06-16 18:21:46,686 - test01CreateResource -INFO - Se clickea en el boton Add
+2015-06-16 18:21:48,462 - test01CreateResource -INFO - Se introduce el nombre del recurso
+2015-06-16 18:21:49,218 - test01CreateResource -INFO - Se introduce el displayname del recurso
+2015-06-16 18:21:50,303 - test01CreateResource -INFO - Se introuce la descripcion
+2015-06-16 18:21:51,445 - test01CreateResource -INFO - Se clickea en el boton SAVE

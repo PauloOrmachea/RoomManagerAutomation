@@ -7,7 +7,7 @@ public enum MenuItem {
 	IMPERSONATION_LINK(By.linkText("Impersonation")),
 	CONFERENCE_ROOMS_LINK(By.linkText("Conference Rooms")),
 	RESOURCES_LINK(By.linkText("Resources")),
-	LOCATIONSLINK(By.linkText("Locations"));
+	LOCATIONS_LINK(By.linkText("Locations"));
 	
 	public By value;	
 	

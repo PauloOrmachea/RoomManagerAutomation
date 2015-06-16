@@ -9,17 +9,15 @@ import java.util.Properties;
  *Class for get:
  *	Admin URL
  *	Tablet URL
- *	Google Chrome Drivet Location
- *From the config.properties fiel
- * 
+ *	Google Chrome Driver Location
  */
 
 public class ConfigReader {
 	static Properties prop = new Properties();
-	InputStream input = null;
-	public ConfigReader(){
+	static InputStream input = null;
+	public static Properties getConfigReader(){
 		try {
-			input = new FileInputStream("resources/config.properties");
+			input = new FileInputStream("resources//config.properties");
 			prop.load(input);
 	 
 		} catch (IOException ex) {
@@ -33,15 +31,24 @@ public class ConfigReader {
 				}
 			}
 		}
+		return prop; 
 	}
+
 	
 	public static String getAdminURL(){
-		return prop.getProperty("ADMIN-URL");
+		return getConfigReader().getProperty("ADMIN-URL");
 	}
 	public static String getTabletURL(){
-		return prop.getProperty("TABLET-URL");
+		return getConfigReader().getProperty("TABLET-URL");
 	}
 	public static String getChromeDriver(){
-		return prop.getProperty("CHROME-DRIVER");
+		return getConfigReader().getProperty("CHROME-DRIVER");
 	}
-  }
+	public static String getRoomManagerUserName(){
+		return getConfigReader().getProperty("ROOM_MANAGER_USERNAME");
+	}
+	public static String getRoomManagerPassword(){
+		return getConfigReader().getProperty("ROOM_MANAGER_PASSWORD");
+	}
+
+}
