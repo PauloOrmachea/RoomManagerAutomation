@@ -1,4 +1,4 @@
-package roomManager.pages.admin;
+package roomManager.pages.admin.locations;
 
 import org.junit.*;
 

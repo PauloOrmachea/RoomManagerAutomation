@@ -1,6 +1,5 @@
 package roomManager.test.admin;
 
-
 import java.util.concurrent.TimeUnit;
 import static org.junit.Assert.*;
 import org.openqa.selenium.*;
@@ -13,12 +12,10 @@ import org.testng.annotations.Test;
 import org.apache.log4j.Logger;
 import org.apache.log4j.PropertyConfigurator;
 
-
 public class CreateResource {
-  private WebDriver driver;
+  private static WebDriver driver;
   private String baseUrl;
   private StringBuffer verificationErrors = new StringBuffer();
-
 
   @Test  (priority=0)
   public void test01CreateResource() throws Exception {
@@ -66,7 +63,6 @@ public class CreateResource {
     baseUrl = "http://172.20.208.174:4042/";
     driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
   }
-
   
   @AfterTest
   public void tearDown() throws Exception {
