@@ -19,3 +19,65 @@
 2015-06-16 18:21:49,218 - test01CreateResource -INFO - Se introduce el displayname del recurso
 2015-06-16 18:21:50,303 - test01CreateResource -INFO - Se introuce la descripcion
 2015-06-16 18:21:51,445 - test01CreateResource -INFO - Se clickea en el boton SAVE
+2015-06-17 09:27:42,128 - test01CreateResource -INFO - Se abre el login page
+2015-06-17 09:27:43,731 - test01CreateResource -INFO - Se introduce el username
+2015-06-17 09:27:44,477 - test01CreateResource -INFO - Se introduce el password
+2015-06-17 09:27:45,188 - test01CreateResource -INFO - Se clickea en el boton enviar
+2015-06-17 09:27:48,059 - test01CreateResource -INFO - Se clickea en la pestana de resources
+2015-06-17 09:27:48,479 - test01CreateResource -INFO - Se clickea en el boton Add
+2015-06-17 09:27:50,255 - test01CreateResource -INFO - Se introduce el nombre del recurso
+2015-06-17 09:27:51,128 - test01CreateResource -INFO - Se introduce el displayname del recurso
+2015-06-17 09:27:52,083 - test01CreateResource -INFO - Se introuce la descripcion
+2015-06-17 09:27:52,943 - test01CreateResource -INFO - Se clickea en el boton SAVE
+2015-06-17 09:27:54,280 - test01CreateResource -INFO - Se verifica que exista el recurso creado
+2015-06-17 18:37:27,749 - ResourcesPage -INFO - 
+2015-06-17 18:41:42,332 - ResourcesPage -INFO - 
+2015-06-17 21:43:05,420 - roomManager.util.Logs -INFO - Login - type the username
+2015-06-17 21:43:05,536 - roomManager.util.Logs -INFO - Login - type the password
+2015-06-17 21:43:05,705 - roomManager.util.Logs -INFO - Login - click on the login
+2015-06-17 21:43:06,297 - roomManager.util.Logs -INFO - common - click on the link item
+2015-06-17 21:43:08,255 - roomManager.util.Logs -INFO - Resources - search for a resource by name
+2015-06-17 21:44:53,988 - roomManager.util.Logs -INFO - Login - type the username
+2015-06-17 21:44:54,145 - roomManager.util.Logs -INFO - Login - type the password
+2015-06-17 21:44:54,332 - roomManager.util.Logs -INFO - Login - click on the login
+2015-06-17 21:44:55,506 - roomManager.util.Logs -INFO - common - click on the link item
+2015-06-17 21:44:57,248 - roomManager.util.Logs -INFO - Resources - click on the add resource button
+2015-06-17 21:44:58,215 - roomManager.util.Logs -INFO - AddResources - type the  resourceName
+2015-06-17 21:44:58,724 - roomManager.util.Logs -INFO - AddResources - type the resourceDisplayName
+2015-06-17 21:44:58,907 - roomManager.util.Logs -INFO - AddResources - type the  resourceDescription
+2015-06-17 21:44:59,063 - roomManager.util.Logs -INFO - AddResources - click on the the save button
+2015-06-17 21:44:59,159 - roomManager.util.Logs -INFO - Resources - search for a resource by name
+2015-06-17 21:44:59,172 - roomManager.util.Logs -INFO - Resources - get table element by the name
+2015-06-17 21:45:03,417 - roomManager.util.Logs -INFO - Login - type the username
+2015-06-17 21:45:03,523 - roomManager.util.Logs -INFO - Login - type the password
+2015-06-17 21:45:03,603 - roomManager.util.Logs -INFO - Login - click on the login
+2015-06-17 21:45:05,203 - roomManager.util.Logs -INFO - common - click on the link item
+2015-06-17 22:39:48,216 - roomManager.util.Logs -INFO - Login - type the username
+2015-06-17 22:39:48,533 - roomManager.util.Logs -INFO - Login - type the password
+2015-06-17 22:39:48,910 - roomManager.util.Logs -INFO - Login - click on the login
+2015-06-17 22:39:48,972 - roomManager.util.Logs -INFO - common - click on the link item
+2015-06-17 22:39:50,993 - roomManager.util.Logs -INFO - Resources - search for a resource by name
+2015-06-17 22:41:35,186 - roomManager.util.Logs -INFO - Login - type the username
+2015-06-17 22:41:35,280 - roomManager.util.Logs -INFO - Login - type the password
+2015-06-17 22:41:35,358 - roomManager.util.Logs -INFO - Login - click on the login
+2015-06-17 22:41:35,981 - roomManager.util.Logs -INFO - common - click on the link item
+2015-06-17 22:41:37,805 - roomManager.util.Logs -INFO - Resources - click on the add resource button
+2015-06-17 22:41:38,914 - roomManager.util.Logs -INFO - AddResources - type the  resourceName
+2015-06-17 22:41:39,476 - roomManager.util.Logs -INFO - AddResources - type the resourceDisplayName
+2015-06-17 22:41:39,747 - roomManager.util.Logs -INFO - AddResources - type the  resourceDescription
+2015-06-17 22:41:39,853 - roomManager.util.Logs -INFO - AddResources - click on the the save button
+2015-06-17 22:41:39,936 - roomManager.util.Logs -INFO - Resources - search for a resource by name
+2015-06-17 22:41:39,949 - roomManager.util.Logs -INFO - Resources - get table element by the name
+2015-06-17 22:41:43,842 - roomManager.util.Logs -INFO - Login - type the username
+2015-06-17 22:41:43,942 - roomManager.util.Logs -INFO - Login - type the password
+2015-06-17 22:41:44,052 - roomManager.util.Logs -INFO - Login - click on the login
+2015-06-17 22:41:44,280 - roomManager.util.Logs -INFO - common - click on the link item
+2015-06-17 22:41:49,992 - roomManager.util.Logs -INFO - Login - type the username
+2015-06-17 22:41:50,156 - roomManager.util.Logs -INFO - Login - type the password
+2015-06-17 22:41:50,236 - roomManager.util.Logs -INFO - Login - click on the login
+2015-06-17 22:41:50,831 - roomManager.util.Logs -INFO - common - click on the link item
+2015-06-17 22:41:51,584 - roomManager.util.Logs -INFO - Location - 
+2015-06-17 22:41:52,403 - roomManager.util.Logs -INFO - Location - 
+2015-06-17 22:41:52,715 - roomManager.util.Logs -INFO - Location - 
+2015-06-17 22:41:52,842 - roomManager.util.Logs -INFO - Location - type the location description
+2015-06-17 22:41:52,926 - roomManager.util.Logs -INFO - Location - 

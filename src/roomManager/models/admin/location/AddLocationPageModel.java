@@ -1,4 +1,4 @@
-package roomManager.models.admin.locations;
+package roomManager.models.admin.location;
 
 import org.openqa.selenium.By;
 

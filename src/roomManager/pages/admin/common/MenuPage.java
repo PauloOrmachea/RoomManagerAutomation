@@ -7,8 +7,9 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import roomManager.models.admin.common.MenuItem;
-import roomManager.pages.admin.resources.AddResourcesPage;
+import roomManager.pages.admin.locations.LocationPage;
 import roomManager.pages.admin.resources.ResourcesPage;
+import roomManager.util.Logs;
 
 public class MenuPage {
 	private WebDriver driver;
@@ -22,26 +23,32 @@ public class MenuPage {
 		this.driver = driver;
 	}
 
-	public void selectEmailServer(){
-		WebElement emailServerLink = null; 
-		emailServerLink.click();
-	}
-
-	public ResourcesPage selectResources(){
-		WebElement resourcesLink = null; 
-		resourcesLink.click();
-		return null;
+	public void selectEmailServerLink(){
+		selectLink(emailServerLink, 60);
 	}
 	
-	public void selectConferenceRooms(){
-		WebElement conferenceRoomsLink = null; 
-		conferenceRoomsLink.click();
+	public void selectImpersonationLink(){
+		selectLink(impersonationLink, 60);
 	}
 	
-	public void selectLocations(){
-		WebElement locationsLink = null;
-		locationsLink.click();
+	public void selectConferenceRoomsLink(){
+		selectLink(conferenceRoomsLink, 60);
 	}
 	
+	public ResourcesPage selectResourcesLink(){
+		selectLink(resourcesLink, 60);
+		return new ResourcesPage(driver);
+	}
 	
-}
+	public LocationPage selectLocationsLink(){
+		selectLink(locationsLink, 60);
+		return new LocationPage(driver);
+	}
+	
+	private void selectLink(By locator, long timeOutInseconds){
+		WebElement link = (new WebDriverWait(driver, timeOutInseconds))
+			.until(ExpectedConditions.presenceOfElementLocated(locator));
+		Logs.info("common - click on the link item");
+		link.click();
+	}
+} 

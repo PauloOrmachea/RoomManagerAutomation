@@ -9,12 +9,12 @@ import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 import roomManager.pages.admin.homePage.AdminHomePage;
 import roomManager.pages.admin.login.LoginPage;
-import roomManager.pages.admin.resources.AddResourcesPage;
-import roomManager.pages.admin.resources.ResourcesPage;
+import roomManager.pages.admin.locations.AddLocationPage;
+import roomManager.pages.admin.locations.LocationPage;
 import roomManager.util.ConfigReader;
 import roomManager.util.WebDriverConfig;
 
-public class CreateResource {
+public class CreateLocation {
 	private WebDriver driver;
 	  
 	  @BeforeTest
@@ -30,10 +30,9 @@ public class CreateResource {
 		//1.-Variables for run the test case - need replace for a external data-driven
 		String username = ConfigReader.getRoomManagerUserName();
 		String password = ConfigReader.getRoomManagerPassword();
-		String resourceName = "SeleniumTest";
-		String resourceDisplayName = "SeleniumTest";
-		String resourceDescription = "Deleteme";
-		String errorMessage = "The resource in not created";
+		String locationName = "SeleniumTest";
+		String locationDisplayName = "SeleniumTest";
+		String locationDescription = "Deleteme";
 		
 		//2.-Instance the login page
 		LoginPage login = new LoginPage(driver);
@@ -45,23 +44,19 @@ public class CreateResource {
 			.clickLoginButton();
 		
 		//4.-Method for Click in the resources button
-		ResourcesPage resources =  adminHomePage
-				.selectResourcesLink();
+		LocationPage location =  adminHomePage
+				.selectLocationsLink();
 		
 		//5.-Method for call the add resource page and introduce the resource name, display name, description
-		AddResourcesPage addResource = resources
-			.clickAddResourceButton()
-			.enterResourceName(resourceName)
-			.enterResourceDisplayName(resourceDisplayName)
-			.enterResourceDescription(resourceDescription);
+		AddLocationPage addLocation = location
+			.clickAddLocationButton()
+			.enterLocationName(locationName)
+			.enterLocationDisplayName(locationDisplayName)
+			.enterLocationDescription(locationDescription);
 		
 		//6.-Method for Save the new resource
-		resources = addResource
-				.clickSaveResourceButton()
-		
-			//7.-This step search for the new resource and confirms if the existence of the new resource	
-			.searchResourceByName(resourceName);
-		assertEquals(errorMessage, resources.getTableElementbyName(), resourceName);
+		location = addLocation
+				.clickSaveLocationButton();
 	}
 	
 	@BeforeSuite

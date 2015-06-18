@@ -5,21 +5,47 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
-import roomManager.models.admin.locations.LocationPageModel;
+import roomManager.models.admin.location.LocationPageModel;
 import roomManager.pages.admin.common.MenuPage;
+import roomManager.util.Logs;
 
 public class LocationPage extends MenuPage{
-	public LocationPage(WebDriver driver) {
-		super(driver);
-		// TODO Auto-generated constructor stub
-	}
 	private WebDriver driver;
 	private By addLocationButtonLocator = LocationPageModel.ADD_LOCATION_BUTTON.value;
-	private By removeLocationButtonLocator = LocationPageModel.REMOVE_LOCATION_BUTTON.value;
+	private By deleteLocationButtonLocator = LocationPageModel.DELETE_LOCATION_BUTTON.value;
 	private By locationTableElementLocator = LocationPageModel.LOCATION_TABLE_ELEMENT.value;
 	private By locationTableCheckBoxLocator = LocationPageModel.LOCATION_TABLE_ELEMENT.value;
 	
-
+	public LocationPage(WebDriver driver) {
+		super(driver);
+		this.driver = driver;
+	}	
+	public AddLocationPage clickAddLocationButton(){
+		WebElement addLocationButton = (new WebDriverWait(driver, 60)).until(ExpectedConditions.presenceOfElementLocated(addLocationButtonLocator));
+		addLocationButton.click();
+		Logs.info("Location - ");
+		return new AddLocationPage(driver);		
+	}
 	
+	public DeleteLocationPage clickDeleteLocationButton(){
+		WebElement deleteLocationButton = (new WebDriverWait(driver,60)).until(ExpectedConditions.presenceOfElementLocated(deleteLocationButtonLocator));
+		deleteLocationButton.click();
+		Logs.info("Location - ");
+		return new DeleteLocationPage(driver);
+	}
 	
+	public String getTableElementbyName(){
+		WebElement LocationTableElement = (new WebDriverWait(driver, 60)).until(ExpectedConditions.presenceOfElementLocated(locationTableElementLocator));
+		Logs.info("Location - ");
+		return LocationTableElement.getText();
+	}
+	
+	public LocationPage clickTableElementCheckBox(){
+		WebElement LocationTableCheckBox = (new WebDriverWait(driver, 60)).until(ExpectedConditions.presenceOfElementLocated(locationTableCheckBoxLocator));
+		LocationTableCheckBox.click();
+		Logs.info("Location - ");
+		return this;
+	}
 }
+	
+	

@@ -17,7 +17,7 @@ public class ConfigReader {
 	static InputStream input = null;
 	public static Properties getConfigReader(){
 		try {
-			input = new FileInputStream("resources//config.properties");
+			input = new FileInputStream("resources/config.properties");
 			prop.load(input);
 	 
 		} catch (IOException ex) {

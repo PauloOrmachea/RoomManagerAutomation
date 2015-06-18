@@ -13,14 +13,13 @@ import org.testng.*;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
-import java.net.*;
 
 public class ScreenShot extends TestListenerAdapter {
 
 	//Take screen shot only for failed test case
 	@Override
 	public void onTestFailure(ITestResult tr) {
-		takeScreenShot();
+		takeScreenShot(tr.getName());
 	}
 
 	@Override
@@ -33,7 +32,7 @@ public class ScreenShot extends TestListenerAdapter {
 	//ScreenShot();
 	}
 
-	private void takeScreenShot() {
+	private void takeScreenShot(String testname) {
 	try {
 
 	String NewFileNamePath;
@@ -46,8 +45,7 @@ public class ScreenShot extends TestListenerAdapter {
 	DateFormat dateFormat = new SimpleDateFormat("dd_MMM_yyyy__hh_mm_ssaa");
 	Date date = new Date();
 
-	InetAddress ownIP=InetAddress.getLocalHost();
-	NewFileNamePath = directory.getCanonicalPath()+ "\\screenshots\\"+ dateFormat.format(date)+"_"+ownIP.getHostAddress()+ ".png";
+	NewFileNamePath = directory.getCanonicalPath()+ "\\screenshots\\" + testname+"_" +dateFormat.format(date)+"_"+ ".png";
 
 	Robot robot = new Robot();
 	BufferedImage bi=robot.createScreenCapture(new Rectangle(scrnsize));
