@@ -4,9 +4,9 @@
            failures="1"
            errors="0"
            skipped="0"
-           time="7.915">
+           time="10.686">
   <properties />
-            <testcase name="TestCreateResource" time="7.915" classname="roomManager.test.admin.CreateResource">
+            <testcase name="TestCreateResource" time="10.686" classname="roomManager.test.admin.CreateResource">
                 <failure type="org.junit.ComparisonFailure"
                   message="The resource in not created expected:&lt;S[ave]&gt; but was:&lt;S[eleniumTest]&gt;"
               >

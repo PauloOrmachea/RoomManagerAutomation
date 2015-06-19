@@ -1,15 +1,11 @@
 package roomManager.test.admin;
 
-import static org.junit.Assert.*;
-
 import org.openqa.selenium.*;
 import org.testng.annotations.AfterSuite;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.BeforeTest;
-import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
-
 import roomManager.pages.admin.homePage.AdminHomePage;
 import roomManager.pages.admin.login.LoginPage;
 import roomManager.pages.admin.resources.DeleteResourcesPage;

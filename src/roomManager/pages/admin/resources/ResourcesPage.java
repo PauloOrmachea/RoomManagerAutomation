@@ -23,34 +23,34 @@ public class ResourcesPage extends MenuPage{
 	}
 
 	public AddResourcesPage clickAddResourceButton(){
-		WebElement addResourceButton = (new WebDriverWait(driver, 60)).until(ExpectedConditions.presenceOfElementLocated(addResourceButtonLocator));
+		WebElement addResourceButton = (new WebDriverWait(driver, 30)).until(ExpectedConditions.presenceOfElementLocated(addResourceButtonLocator));
 		addResourceButton.click();
 		Logs.info("Resources - click on the add resource button");
 		return new AddResourcesPage(driver);		
 	}
 	
 	public DeleteResourcesPage clickDeleteResourceButton(){
-		WebElement deleteResourceButton = (new WebDriverWait(driver,60)).until(ExpectedConditions.presenceOfElementLocated(deleteResourceButtonLocator));
+		WebElement deleteResourceButton = (new WebDriverWait(driver, 30)).until(ExpectedConditions.presenceOfElementLocated(deleteResourceButtonLocator));
 		deleteResourceButton.click();
 		Logs.info("Resources - click on the delete button");
 		return new DeleteResourcesPage(driver);
 	}
 	
 	public ResourcesPage searchResourceByName(String resourceName){
-		WebElement searchResourceTextField = (new WebDriverWait(driver, 100)).until(ExpectedConditions.presenceOfElementLocated(searchResourceTextFieldLocator));
+		WebElement searchResourceTextField = (new WebDriverWait(driver, 30)).until(ExpectedConditions.presenceOfElementLocated(searchResourceTextFieldLocator));
 		searchResourceTextField.sendKeys(resourceName);
 		Logs.info("Resources - search for a resource by name");
 		return this;
 	}
 	
 	public String getTableElementbyName(){
-		WebElement ResourceTableElement = (new WebDriverWait(driver, 100)).until(ExpectedConditions.presenceOfElementLocated(resourceTableElementLocator));
+		WebElement ResourceTableElement = (new WebDriverWait(driver, 30)).until(ExpectedConditions.presenceOfElementLocated(resourceTableElementLocator));
 		Logs.info("Resources - get table element by the name");
 		return ResourceTableElement.getText();
 	}
 	
 	public ResourcesPage clickTableElementCheckBox(){
-		WebElement ResourceTableCheckBox = (new WebDriverWait(driver, 100)).until(ExpectedConditions.presenceOfElementLocated(resourcesTableCheckBoxLocator));
+		WebElement ResourceTableCheckBox = (new WebDriverWait(driver, 30)).until(ExpectedConditions.presenceOfElementLocated(resourcesTableCheckBoxLocator));
 		ResourceTableCheckBox.click();
 		Logs.info("Resources - click the checkbox of the element");
 		return this;

@@ -8,11 +8,19 @@ import java.awt.Toolkit;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
+
 import javax.imageio.ImageIO;
+import org.apache.commons.io.FileUtils;
+
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.*;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import roomManager.util.Logs;
 
 public class ScreenShot extends TestListenerAdapter {
 
@@ -20,6 +28,18 @@ public class ScreenShot extends TestListenerAdapter {
 	@Override
 	public void onTestFailure(ITestResult tr) {
 		takeScreenShot(tr.getName());
+	/*	
+		WebDriver driver = new FirefoxDriver();
+		driver.get("");
+		File scrFile = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
+		// Now you can do whatever you need to do with it, for example copy somewhere
+		try {
+			FileUtils.copyFile(scrFile, new File("c:\\tmp\\screenshot.png"));
+			Logs.info("se tomo la screshoot");
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}*/
 	}
 
 	@Override

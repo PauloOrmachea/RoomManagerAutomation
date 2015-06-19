@@ -8,5 +8,6 @@
 	<classpathentry kind="lib" path="C:/Users/Administrator/Documents/16/ReportNG-Listerners/velocity-dep-1.4.jar"/>
 	<classpathentry kind="lib" path="C:/Users/Administrator/Documents/16/installer/Selenium/selenium-server-standalone-2.45.0.jar"/>
 	<classpathentry kind="lib" path="C:/Users/Administrator/Documents/16/Log4J for Selenium/log4j-1.2.15.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Administrator/Documents/16/commons-io-2.4/commons-io-2.4.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

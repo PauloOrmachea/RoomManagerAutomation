@@ -22,27 +22,27 @@ public class AddLocationPage {
 	public AddLocationPage enterLocationName(String locationName){
 		WebElement locationNameTextField = (new WebDriverWait(driver, 30)).until(ExpectedConditions.presenceOfElementLocated(addLocationNameTextFieldLocator));
 		locationNameTextField.sendKeys(locationName);
-		Logs.info("Location - ");
+		Logs.info("Location - enter the new location name");
 		return this;
 	}
 	
 	public AddLocationPage enterLocationDisplayName(String locationDisplayName){
 		WebElement locationDisplayNameTextField = (new WebDriverWait(driver, 30)).until(ExpectedConditions.presenceOfElementLocated(addLocationDisplayNameTextFieldLocator));
 		locationDisplayNameTextField.sendKeys(locationDisplayName);
-		Logs.info("Location - ");
+		Logs.info("Location - enter the new location display name");
 		return this;
 	}
 	public AddLocationPage enterLocationDescription(String locationDescription){
 		WebElement locationDescriptionTextField = (new WebDriverWait(driver, 30)).until(ExpectedConditions.presenceOfElementLocated(addLocationDescriptionTextFieldLocator));
 		locationDescriptionTextField.sendKeys(locationDescription);
-		Logs.info("Location - type the location description");
+		Logs.info("Location - enter the new location description");
 		return this;
 	}
 	
 	public LocationPage clickSaveLocationButton(){
 		WebElement saveLocationButton = (new WebDriverWait(driver, 30))	.until(ExpectedConditions.presenceOfElementLocated(addLocationSaveButtonLocator));
 		saveLocationButton.click();
-		Logs.info("Location - ");
+		Logs.info("Location - click on the save location button");
 		return new LocationPage(driver);
 	}
 }
