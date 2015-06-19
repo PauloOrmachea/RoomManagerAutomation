@@ -28,18 +28,16 @@ public class ScreenShot extends TestListenerAdapter {
 	@Override
 	public void onTestFailure(ITestResult tr) {
 		takeScreenShot(tr.getName());
-	/*	
+		
 		WebDriver driver = new FirefoxDriver();
-		driver.get("");
 		File scrFile = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
 		// Now you can do whatever you need to do with it, for example copy somewhere
 		try {
 			FileUtils.copyFile(scrFile, new File("c:\\tmp\\screenshot.png"));
 			Logs.info("se tomo la screshoot");
 		} catch (IOException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
-		}*/
+		}
 	}
 
 	@Override

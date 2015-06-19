@@ -48,7 +48,6 @@ public class DeleteLocation {
 		dclick.doubleClick(searchLocation);
 		dclick.perform();
 		*/
-	    
 	    driver.findElement(By.linkText("Locations")).click();
 	    driver.findElement(By.xpath("(//input[@type='checkbox'])[10]")).click();
 	    driver.findElement(By.xpath("//button[2]")).click();

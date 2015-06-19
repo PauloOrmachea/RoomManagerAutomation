@@ -6,7 +6,22 @@
       <listener class-name="org.uncommons.reportng.JUnitXMLReporter"/>
       <listener class-name="roomManager.util.ScreenShot"/>
   </listeners>
-   <test name="Test-Location-Create">
+   <test name="Test-Resources-Create">
+    <classes>
+      <class name="roomManager.test.admin.DeleteResource" />
+    </classes>
+  </test>
+   <test name="Test-Resources-Delete">
+    <classes>
+      <class name="roomManager.test.admin.CreateResource" />
+    </classes>
+  </test>    
+   <test name="Test-Resources-Edit">
+    <classes>
+      <class name="roomManager.test.admin.EditResource" />
+    </classes>
+  </test>
+   <test name="Test-Location-Delete">
     <classes>
       <class name="roomManager.test.admin.DeleteLocation" />
     </classes>

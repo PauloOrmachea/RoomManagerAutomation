@@ -67,7 +67,7 @@ public class CreateLocation {
 		//6.-Method for Save the new resource
 		location = addLocation
 				.clickSaveLocationButton();
-	    Assert.assertTrue(isElementPresent(By.name(locationName)),"CreateResource not created");
+		Assert.assertTrue(isElementPresent(By.name(locationName)),"Location not created");
 	    
 	    
 	}

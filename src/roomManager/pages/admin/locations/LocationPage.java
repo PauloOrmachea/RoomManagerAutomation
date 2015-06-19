@@ -38,14 +38,14 @@ public class LocationPage extends MenuPage{
 	
 	public String getTableElementbyName(){
 		WebElement LocationTableElement = (new WebDriverWait(driver, 60)).until(ExpectedConditions.presenceOfElementLocated(locationTableElementLocator));
-		Logs.info("Location - ");
+		Logs.info("Location - grab the resources");
 		return LocationTableElement.getText();
 	}
 	
 	public LocationPage clickTableElementCheckBox(){
 		WebElement LocationTableCheckBox = (new WebDriverWait(driver, 60)).until(ExpectedConditions.presenceOfElementLocated(locationTableCheckBoxLocator));
 		LocationTableCheckBox.click();
-		Logs.info("Location - ");
+		Logs.info("Location - click on the checkbox");
 		return this;
 	}
 

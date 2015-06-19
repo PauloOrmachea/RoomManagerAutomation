@@ -1,12 +1,15 @@
 package roomManager.test.admin;
 
 import static org.junit.Assert.*;
+
 import org.openqa.selenium.*;
+import org.testng.Assert;
 import org.testng.annotations.AfterSuite;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
+
 import roomManager.pages.admin.homePage.AdminHomePage;
 import roomManager.pages.admin.login.LoginPage;
 import roomManager.pages.admin.resources.AddResourcesPage;
@@ -62,7 +65,17 @@ public class CreateResource {
 			//7.-This step search for the new resource and confirms if the existence of the new resource	
 			.searchResourceByName(resourceName);
 		assertEquals(errorMessage, resources.getTableElementbyName(), resourceName);
+		
+		//Assert.assertTrue(isElementPresent(By.name(resourceName)),"Resource not created");
 	}
+	/*  private boolean isElementPresent(By by) {
+		    try {
+		      driver.findElement(by);
+		      return true;
+		    } catch (NoSuchElementException e) {
+		      return false;
+		    }
+		  }*/
 	
 	@BeforeSuite
 	public void beforeSuite() throws Exception {

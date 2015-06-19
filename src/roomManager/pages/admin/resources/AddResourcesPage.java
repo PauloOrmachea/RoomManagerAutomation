@@ -20,7 +20,7 @@ public class AddResourcesPage {
 	}
 
 	public AddResourcesPage enterResourceName(String resourceName){
-		WebElement resourceNameTextField = (new WebDriverWait(driver, 30))
+		WebElement resourceNameTextField = (new WebDriverWait(driver, 60))
 			.until(ExpectedConditions.presenceOfElementLocated(addResourceNameTextFieldLocator));
 		resourceNameTextField.sendKeys(resourceName);
 		Logs.info("AddResources - type the  resourceName");
@@ -28,7 +28,7 @@ public class AddResourcesPage {
 	}
 	
 	public AddResourcesPage enterResourceDisplayName(String resourceDisplayName){
-		WebElement resourceDisplayNameTextField = (new WebDriverWait(driver, 30))
+		WebElement resourceDisplayNameTextField = (new WebDriverWait(driver, 60))
 			.until(ExpectedConditions.presenceOfElementLocated(addResourceDisplayNameTextFieldLocator));
 		resourceDisplayNameTextField.sendKeys(resourceDisplayName);
 		Logs.info("AddResources - type the resourceDisplayName");
@@ -36,7 +36,7 @@ public class AddResourcesPage {
 	}
 	
 	public AddResourcesPage enterResourceDescription(String resourceDescription){
-		WebElement resourceDescriptionAreaText = (new WebDriverWait(driver, 30))
+		WebElement resourceDescriptionAreaText = (new WebDriverWait(driver,60))
 			.until(ExpectedConditions.presenceOfElementLocated(addResourceDescriptionTextFieldLocator));
 		resourceDescriptionAreaText.sendKeys(resourceDescription);
 		Logs.info("AddResources - type the  resourceDescription");
@@ -44,7 +44,7 @@ public class AddResourcesPage {
 	}
 	
 	public ResourcesPage clickSaveResourceButton(){
-		WebElement saveResourceButton = (new WebDriverWait(driver, 30))
+		WebElement saveResourceButton = (new WebDriverWait(driver, 60))
 			.until(ExpectedConditions.presenceOfElementLocated(addResourceSaveButtonLocator));
 		saveResourceButton.click();
 		Logs.info("AddResources - click on the the save button");
