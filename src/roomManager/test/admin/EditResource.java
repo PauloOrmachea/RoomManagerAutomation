@@ -23,13 +23,21 @@ public class EditResource {
 	  @BeforeTest
 	  public void beforeTest1(){
 	  }
+	  @BeforeSuite
+	  public void beforeSuite() throws Exception {
+		  driver = WebDriverConfig.getChromeDriver();
+	  } 
+	  @AfterSuite
+	  public void afterSuite(){
+		  driver.quit();
+	  }
 	  
 	  @Test(priority=0)
-	public void TestEditResource() throws Exception {
+	public void TestEditResource(){
 		
 		String username = ConfigReader.getRoomManagerUserName();
 		String password = ConfigReader.getRoomManagerPassword();
-		String resourceName = "tech48";
+		String resourceName = "SeleniumTest";
 		String newResourceName = "Selenium";
 		String newResourceDisplayName = "Selenium";
 		String newResourceDescription = "Deleteme";
@@ -41,51 +49,18 @@ public class EditResource {
 			.clickLoginButton();
 		ResourcesPage resources =  adminHomePage
 				.selectResourcesLink();
-		driver.findElement(By.xpath("//input[@type='text']")).clear();
-		driver.findElement(By.xpath("//input[@type='text']")).sendKeys(resourceName);
-		driver.findElement(By.cssSelector("div.ng-scope > span.ng-binding")).click();
-	    driver.findElement(By.xpath("(//input[@type='text'])[3]")).clear();
-	    driver.findElement(By.xpath("(//input[@type='text'])[3]")).sendKeys(newResourceName);
-	    driver.findElement(By.xpath("(//input[@type='text'])[3]")).clear();
-	    driver.findElement(By.xpath("(//input[@type='text'])[3]")).sendKeys(newResourceDisplayName); 
-	    driver.findElement(By.xpath("//textarea")).clear();
-		driver.findElement(By.xpath("//textarea")).sendKeys(newResourceDescription);
-		driver.findElement(By.cssSelector("button.info")).click();
-
-	}
-		@BeforeSuite
-		public void beforeSuite() throws Exception {
-			driver = WebDriverConfig.getChromeDriver();
-		} 
-		@AfterSuite
-		public void afterSuite(){
-			driver.quit();
-		}
+		ResourcesPage resourceNew = resources
+				.searchResourceByName(resourceName);
+		AddResourcesPage resourceNewRes = resourceNew.
+				doubleClickTableElement();
+		AddResourcesPage resourceNewResEd = resourceNewRes
+				.enterResourceName(newResourceName)
+				.enterResourceDisplayName(newResourceDisplayName)
+				.enterResourceDescription(newResourceDescription);
+		resources = resourceNewResEd
+				.clickSaveResourceButton();
+				
+	  }
 }
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-/*
-
-driver.findElement(By.xpath("//input[@type='text']")).clear();
-driver.findElement(By.xpath("//input[@type='text']")).sendKeys("techzone48");
-driver.findElement(By.cssSelector("div.ng-scope > span.ng-binding")).click();
-driver.findElement(By.xpath("(//input[@type='text'])[3]")).clear();
-driver.findElement(By.xpath("(//input[@type='text'])[3]")).sendKeys("tech48");
-driver.findElement(By.xpath("//textarea")).clear();
-driver.findElement(By.xpath("//textarea")).sendKeys("tech48");
-driver.findElement(By.cssSelector("button.info")).click();
- 
-*/

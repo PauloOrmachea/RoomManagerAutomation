@@ -11,13 +11,11 @@ import roomManager.util.Logs;
 public class DeleteResourcesPage {
 	private WebDriver driver;
 	private By deleteResourceButtonLocator = DeleteResourcesPageModel.DELETE_RESOURCE_BUTTON.value;
-	
 	public DeleteResourcesPage(WebDriver driver){
 		this.driver = driver;
 	}
-	
 	public ResourcesPage clickDeleteResourceButton(){
-		WebElement deleteResourceButton = (new WebDriverWait(driver, 60)).until(ExpectedConditions.presenceOfElementLocated(deleteResourceButtonLocator));
+		WebElement deleteResourceButton = (new WebDriverWait(driver, 100)).until(ExpectedConditions.presenceOfElementLocated(deleteResourceButtonLocator));
 		deleteResourceButton.click();
 		Logs.info("DeleteResources - delete a resource");
 		return new ResourcesPage(driver);

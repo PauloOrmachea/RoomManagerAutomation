@@ -28,7 +28,9 @@ public class ScreenShot extends TestListenerAdapter {
 	@Override
 	public void onTestFailure(ITestResult tr) {
 		takeScreenShot(tr.getName());
-		
+		Logs.info("Failed Test Case Screenshot Saved");
+	/*	
+		//Take the whole page screenshot
 		WebDriver driver = new FirefoxDriver();
 		File scrFile = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
 		// Now you can do whatever you need to do with it, for example copy somewhere
@@ -38,6 +40,7 @@ public class ScreenShot extends TestListenerAdapter {
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
+		*/
 	}
 
 	@Override

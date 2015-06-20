@@ -1,7 +1,6 @@
 package roomManager.test.admin;
 
 import org.openqa.selenium.*;
-import org.testng.Assert;
 import org.testng.annotations.AfterSuite;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeSuite;
@@ -24,24 +23,27 @@ public class CreateLocation {
 	  @AfterTest
 	  public void afterTest(){
 	  }
-	  
-	  private boolean isElementPresent(By by) {
-		    try {
-		      driver.findElement(by);
-		      return true;
-		    } catch (NoSuchElementException e) {
-		      return false;
-		    }
-		  }
-	
+	  @BeforeSuite
+	  public void beforeSuite() throws Exception {
+		  driver = WebDriverConfig.getChromeDriver();
+	  } 
+	  @AfterSuite
+	  public void afterSuite(){
+			driver.quit();
+	  }
+/*	  private boolean isElementPresent(By by) {
+		    try {driver.findElement(by);
+		      return true;} catch (NoSuchElementException e) {return false;}
+		  }*/
+
 	@Test(priority=1)
 	public void TestCreateResource() throws Exception {
 		
 		//1.-Variables for run the test case - need replace for a external data-driven
 		String username = ConfigReader.getRoomManagerUserName();
 		String password = ConfigReader.getRoomManagerPassword();
-		String locationName = "SeleniumTest2";
-		String locationDisplayName = "SeleniumTest2";
+		String locationName = "SeleniumLocationTest";
+		String locationDisplayName = "SeleniumLocationTest";
 		String locationDescription = "Deleteme";
 		
 		//2.-Instance the login page
@@ -67,18 +69,6 @@ public class CreateLocation {
 		//6.-Method for Save the new resource
 		location = addLocation
 				.clickSaveLocationButton();
-		Assert.assertTrue(isElementPresent(By.name(locationName)),"Location not created");
-	    
-	    
+		//Assert.assertTrue(isElementPresent(By.name(locationName)),"Location not created");
 	}
-	
-	@BeforeSuite
-	public void beforeSuite() throws Exception {
-		driver = WebDriverConfig.getChromeDriver();
-	} 
-	@AfterSuite
-	public void afterSuite(){
-		driver.quit();
-	}
-	
 } 

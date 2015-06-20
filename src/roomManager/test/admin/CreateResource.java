@@ -1,15 +1,12 @@
 package roomManager.test.admin;
 
 import static org.junit.Assert.*;
-
 import org.openqa.selenium.*;
-import org.testng.Assert;
 import org.testng.annotations.AfterSuite;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
-
 import roomManager.pages.admin.homePage.AdminHomePage;
 import roomManager.pages.admin.login.LoginPage;
 import roomManager.pages.admin.resources.AddResourcesPage;
@@ -25,9 +22,18 @@ public class CreateResource {
 	  }
 	  @AfterTest
 	  public void afterTest(){
+
+	  }
+	  @BeforeSuite
+	  public void beforeSuite() throws Exception {
+		  driver = WebDriverConfig.getChromeDriver();
+	  } 
+	  @AfterSuite
+	  public void afterSuite(){
+		  driver.quit();
 	  }
 	
-	@Test(priority=1)
+	@Test
 	public void TestCreateResource() throws Exception {
 		
 		//1.-Variables for run the test case - need replace for a external data-driven
@@ -36,7 +42,7 @@ public class CreateResource {
 		String resourceName = "SeleniumTest";
 		String resourceDisplayName = "SeleniumTest";
 		String resourceDescription = "Deleteme";
-		String errorMessage = "The resource in not created";
+//		String errorMessage = "The resource in not created";
 		
 		//2.-Instance the login page
 		LoginPage login = new LoginPage(driver);
@@ -64,26 +70,7 @@ public class CreateResource {
 		
 			//7.-This step search for the new resource and confirms if the existence of the new resource	
 			.searchResourceByName(resourceName);
-		assertEquals(errorMessage, resources.getTableElementbyName(), resourceName);
-		
-		//Assert.assertTrue(isElementPresent(By.name(resourceName)),"Resource not created");
-	}
-	/*  private boolean isElementPresent(By by) {
-		    try {
-		      driver.findElement(by);
-		      return true;
-		    } catch (NoSuchElementException e) {
-		      return false;
-		    }
-		  }*/
-	
-	@BeforeSuite
-	public void beforeSuite() throws Exception {
-		driver = WebDriverConfig.getChromeDriver();
-	} 
-	@AfterSuite
-	public void afterSuite(){
-		driver.quit();
+		//assertEquals(errorMessage, resources.getTableElementbyName(), resourceName);
 	}
 	
 } 

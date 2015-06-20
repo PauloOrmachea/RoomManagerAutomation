@@ -22,13 +22,21 @@ public class DeleteResource {
 	  @BeforeTest
 	  public void beforeTest(){
 	  }
+		@BeforeSuite
+		public void beforeSuite() throws Exception {
+			driver = WebDriverConfig.getChromeDriver();
+		} 
+		@AfterSuite
+		public void afterSuite(){
+			driver.quit();
+		}
 
-	@Test(priority=2)
+	@Test
 	public void TestDeleteResource() throws Exception {
 		
 		String username = ConfigReader.getRoomManagerUserName();
 		String password = ConfigReader.getRoomManagerPassword();
-		String resourceName = "StessTest001";
+		String resourceN = "Selenium";
 		
 		LoginPage login = new LoginPage(driver);
 		AdminHomePage adminHomePage = login
@@ -38,19 +46,12 @@ public class DeleteResource {
 		ResourcesPage resources =  adminHomePage
 				.selectResourcesLink();
 		DeleteResourcesPage deleteResources = resources
-				.searchResourceByName(resourceName)
+				.searchResourceByName(resourceN)
 				.clickTableElementCheckBox()
 				.clickDeleteResourceButton();
 		resources = deleteResources
 				.clickDeleteResourceButton()
-				.searchResourceByName(resourceName);
-	}
-	@BeforeSuite
-	public void beforeSuite() throws Exception {
-		driver = WebDriverConfig.getChromeDriver();
-	} 
-	@AfterSuite
-	public void afterSuite(){
-		driver.quit();
+				.searchResourceByName(resourceN);
 	}
 }
+

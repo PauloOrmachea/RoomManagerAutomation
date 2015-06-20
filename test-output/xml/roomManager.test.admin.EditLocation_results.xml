@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="Test-Locations-Edit"
+           tests="1"
+           failures="0"
+           errors="0"
+           skipped="0"
+           time="6.898">
+  <properties />
+  
+  
+            <testcase name="TestDeleteLocation" time="6.898" classname="roomManager.test.admin.EditLocation" />
+      
+</testsuite>

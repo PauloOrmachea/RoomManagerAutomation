@@ -48,7 +48,7 @@ public class MenuPage {
 	private void selectLink(By locator, long timeOutInseconds){
 		WebElement link = (new WebDriverWait(driver, timeOutInseconds))
 			.until(ExpectedConditions.presenceOfElementLocated(locator));
-		Logs.info("common - click on the link item");
+		Logs.info("common - click on the desired link item");
 		link.click();
 	}
 } 

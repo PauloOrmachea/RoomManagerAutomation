@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="Test-Location-Create"
+<testsuite name="Test-Locations-Create"
            tests="1"
            failures="0"
            errors="0"
            skipped="0"
-           time="10.575">
+           time="8.025">
   <properties />
   
   
-            <testcase name="TestCreateResource" time="10.575" classname="roomManager.test.admin.CreateLocation" />
+            <testcase name="TestCreateResource" time="8.025" classname="roomManager.test.admin.CreateLocation" />
       
 </testsuite>

@@ -8,22 +8,35 @@
   </listeners>
    <test name="Test-Resources-Create">
     <classes>
-      <class name="roomManager.test.admin.DeleteResource" />
-    </classes>
-  </test>
-   <test name="Test-Resources-Delete">
-    <classes>
       <class name="roomManager.test.admin.CreateResource" />
     </classes>
-  </test>    
+  </test>
    <test name="Test-Resources-Edit">
     <classes>
       <class name="roomManager.test.admin.EditResource" />
     </classes>
   </test>
-   <test name="Test-Location-Delete">
+   <test name="Test-Resources-Delete">
+    <classes>
+      <class name="roomManager.test.admin.DeleteResource" />
+    </classes>
+  </test>
+
+   <test name="Test-Locations-Create">
+    <classes>
+      <class name="roomManager.test.admin.CreateLocation" />
+    </classes>
+  </test>
+   <test name="Test-Locations-Edit">
+    <classes>
+      <class name="roomManager.test.admin.EditLocation" />
+    </classes>
+  </test>
+   <test name="Test-Locations-Delete">
     <classes>
       <class name="roomManager.test.admin.DeleteLocation" />
     </classes>
   </test>
+  
 </suite>
+

@@ -22,6 +22,7 @@ public class AddResourcesPage {
 	public AddResourcesPage enterResourceName(String resourceName){
 		WebElement resourceNameTextField = (new WebDriverWait(driver, 60))
 			.until(ExpectedConditions.presenceOfElementLocated(addResourceNameTextFieldLocator));
+		resourceNameTextField.clear();
 		resourceNameTextField.sendKeys(resourceName);
 		Logs.info("AddResources - type the  resourceName");
 		return this;
@@ -30,6 +31,7 @@ public class AddResourcesPage {
 	public AddResourcesPage enterResourceDisplayName(String resourceDisplayName){
 		WebElement resourceDisplayNameTextField = (new WebDriverWait(driver, 60))
 			.until(ExpectedConditions.presenceOfElementLocated(addResourceDisplayNameTextFieldLocator));
+		resourceDisplayNameTextField.clear();
 		resourceDisplayNameTextField.sendKeys(resourceDisplayName);
 		Logs.info("AddResources - type the resourceDisplayName");
 		return this;
@@ -38,6 +40,7 @@ public class AddResourcesPage {
 	public AddResourcesPage enterResourceDescription(String resourceDescription){
 		WebElement resourceDescriptionAreaText = (new WebDriverWait(driver,60))
 			.until(ExpectedConditions.presenceOfElementLocated(addResourceDescriptionTextFieldLocator));
+		resourceDescriptionAreaText.clear();
 		resourceDescriptionAreaText.sendKeys(resourceDescription);
 		Logs.info("AddResources - type the  resourceDescription");
 		return this;
