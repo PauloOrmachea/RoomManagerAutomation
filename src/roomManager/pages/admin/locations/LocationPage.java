@@ -6,10 +6,8 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
-
 import roomManager.models.admin.location.LocationPageModel;
 import roomManager.pages.admin.common.MenuPage;
-import roomManager.pages.admin.resources.AddResourcesPage;
 import roomManager.util.Logs;
 
 public class LocationPage extends MenuPage{
@@ -25,27 +23,27 @@ public class LocationPage extends MenuPage{
 	public AddLocationPage clickAddLocationButton(){
 		WebElement addLocationButton = (new WebDriverWait(driver, 60)).until(ExpectedConditions.presenceOfElementLocated(addLocationButtonLocator));
 		addLocationButton.click();
-		Logs.info("Location - click to the add button");
+		Logs.info("LocationPage - click to the add button");
 		return new AddLocationPage(driver);		
 	}
 	
 	public DeleteLocationPage clickDeleteLocationButton(){
 		WebElement deleteLocationButton = (new WebDriverWait(driver,60)).until(ExpectedConditions.presenceOfElementLocated(deleteLocationButtonLocator));
 		deleteLocationButton.click();
-		Logs.info("Location - click to the delete location button");
+		Logs.info("LocationPage - click to the delete location button");
 		return new DeleteLocationPage(driver);
 	}
 	
 	public String getTableElementbyName(){
 		WebElement LocationTableElement = (new WebDriverWait(driver, 60)).until(ExpectedConditions.presenceOfElementLocated(locationTableElementLocator));
-		Logs.info("Location - grab the location");
+		Logs.info("LocationPage - grab the location");
 		return LocationTableElement.getText();
 	}
 
 	public LocationPage clickTableElementCheckBox(){
 		WebElement LocationTableCheckBox = (new WebDriverWait(driver, 60)).until(ExpectedConditions.presenceOfElementLocated(locationTableElementLocator));
 		LocationTableCheckBox.click();
-		Logs.info("Location - click on the location checkbox");
+		Logs.info("LocationPage - click on the location checkbox");
 		return this;
 	}
 	public AddLocationPage doubleClickTableElement(){
@@ -53,7 +51,7 @@ public class LocationPage extends MenuPage{
 		Actions doubleclick = new Actions(driver);
 		doubleclick.doubleClick(LocationTableElement);
 		doubleclick.perform();
-		Logs.info("Location - double click on the location element");
+		Logs.info("LocationPage - double click on the location element");
 		return new AddLocationPage(driver);
 	}
 

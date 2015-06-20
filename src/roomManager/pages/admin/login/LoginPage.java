@@ -26,21 +26,21 @@ public class LoginPage {
 	public LoginPage enterUserName(String username){
 		WebElement usernameTextField = (new WebDriverWait(driver, 100)).until(ExpectedConditions.presenceOfElementLocated(usernameTextFieldLocator));
 		usernameTextField.sendKeys(username);
-		Logs.info("Login - type the username");
+		Logs.info("LoginPage - type the username");
 		return this;
 	}
 	
 	public LoginPage enterPassword(String password){
 		WebElement passwordTextField = (new WebDriverWait(driver, 100)).until(ExpectedConditions.presenceOfElementLocated(passwordTextFieldLoactor));
 		passwordTextField.sendKeys(password);
-		Logs.info("Login - type the password");
+		Logs.info("LoginPage - type the password");
 		return this;
 	}
 	
 	public AdminHomePage clickLoginButton(){
 		WebElement loginButton = (new WebDriverWait(driver, 60)).until(ExpectedConditions.presenceOfElementLocated(loginButtonLocator));
 		loginButton.click();
-		Logs.info("Login - click on the login");
+		Logs.info("LoginPage- click on the login");
 		return new AdminHomePage(driver);
 	}
 }

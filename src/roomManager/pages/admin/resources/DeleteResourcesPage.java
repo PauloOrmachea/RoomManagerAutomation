@@ -17,7 +17,7 @@ public class DeleteResourcesPage {
 	public ResourcesPage clickDeleteResourceButton(){
 		WebElement deleteResourceButton = (new WebDriverWait(driver, 100)).until(ExpectedConditions.presenceOfElementLocated(deleteResourceButtonLocator));
 		deleteResourceButton.click();
-		Logs.info("DeleteResources - delete a resource");
+		Logs.info("DeleteResourcesPage - delete a resource");
 		return new ResourcesPage(driver);
 	}
 }

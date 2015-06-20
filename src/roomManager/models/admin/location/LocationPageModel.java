@@ -9,9 +9,7 @@ public enum LocationPageModel {
 		//location of the first element of the table
 		LOCATION_TABLE_ELEMENT(By.xpath("//div[@id='locationGrid']/div[2]/div/div/div[2]/div[2]/div"));
 		//LOCATION_TABLE_ELEMENT(By.xpath("//div[3]/div[2]/button")),
-		
 		public By value;
-		
 		private LocationPageModel(By value){
 			this.value = value;
 		}

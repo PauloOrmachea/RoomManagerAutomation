@@ -27,14 +27,14 @@ public class ResourcesPage extends MenuPage{
 	public AddResourcesPage clickAddResourceButton(){
 		WebElement addResourceButton = (new WebDriverWait(driver, 100)).until(ExpectedConditions.presenceOfElementLocated(addResourceButtonLocator));
 		addResourceButton.click();
-		Logs.info("Resources - click on the add resource button");
+		Logs.info("ResourcesPage - click on the add resource button");
 		return new AddResourcesPage(driver);		
 	}
 	
 	public DeleteResourcesPage clickDeleteResourceButton(){
 		WebElement deleteResourceButton = (new WebDriverWait(driver, 100)).until(ExpectedConditions.presenceOfElementLocated(deleteResourceButtonLocator));
 		deleteResourceButton.click();
-		Logs.info("Resources - click on the delete button");
+		Logs.info("ResourcesPage - click on the delete button");
 		return new DeleteResourcesPage(driver);
 	}
 	
@@ -42,20 +42,20 @@ public class ResourcesPage extends MenuPage{
 		WebElement searchResourceTextField = (new WebDriverWait(driver, 100)).until(ExpectedConditions.presenceOfElementLocated(searchResourceTextFieldLocator));
 		searchResourceTextField.clear();
 		searchResourceTextField.sendKeys(newResourceName);
-		Logs.info("Resources - search for a resource by name");
+		Logs.info("ResourcesPage - search for a resource by name");
 		return this;
 	}
 	
 	public String getTableElementbyName(){
 		WebElement ResourceTableElement = (new WebDriverWait(driver, 100)).until(ExpectedConditions.presenceOfElementLocated(resourceTableElementLocator));
-		Logs.info("Resources - get the resoult resource of the search");
+		Logs.info("ResourcesPage - get the resoult resource of the search");
 		return ResourceTableElement.getText();
 	}
 
 	public ResourcesPage clickTableElementCheckBox(){
 		WebElement ResourceTableCheckBox = (new WebDriverWait(driver, 100)).until(ExpectedConditions.presenceOfElementLocated(resourcesTableCheckBoxLocator));
 		ResourceTableCheckBox.click();
-		Logs.info("Resources - click the checkbox of the element");
+		Logs.info("ResourcesPage - click the checkbox of the element");
 		return this;
 	}
 	
@@ -64,7 +64,7 @@ public class ResourcesPage extends MenuPage{
 		Actions doubleclick = new Actions(driver);
 		doubleclick.doubleClick(ResourceTableElement);
 		doubleclick.perform();
-		Logs.info("Resources - click the checkbox of the element");
+		Logs.info("ResourcesPage - click the checkbox of the element");
 		return new AddResourcesPage(driver);
 	}
 }

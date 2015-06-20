@@ -21,7 +21,7 @@ public class AdminHomePage extends MenuPage{
 	
 	public String getHomePageTittleText(){
 		WebElement roomManagerTittle = (new WebDriverWait(driver, 60)).until(ExpectedConditions.presenceOfElementLocated(roomManagerTitleLocator));
-		Logs.info("HomePage - click on the homepage");
+		Logs.info("AdminHomePage - click on the homepage");
 		return roomManagerTittle.getText();
 	}
 } 

@@ -8,9 +8,7 @@ public enum MenuItem {
 	CONFERENCE_ROOMS_LINK(By.linkText("Conference Rooms")),
 	RESOURCES_LINK(By.linkText("Resources")),
 	LOCATIONS_LINK(By.linkText("Locations"));
-	
 	public By value;	
-	
 	private MenuItem(By value){
 		this.value = value;
 	}

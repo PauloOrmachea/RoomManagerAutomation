@@ -10,12 +10,6 @@ import java.io.File;
 import java.io.IOException;
 
 import javax.imageio.ImageIO;
-import org.apache.commons.io.FileUtils;
-
-import org.openqa.selenium.OutputType;
-import org.openqa.selenium.TakesScreenshot;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.*;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
@@ -29,18 +23,6 @@ public class ScreenShot extends TestListenerAdapter {
 	public void onTestFailure(ITestResult tr) {
 		takeScreenShot(tr.getName());
 		Logs.info("Failed Test Case Screenshot Saved");
-	/*	
-		//Take the whole page screenshot
-		WebDriver driver = new FirefoxDriver();
-		File scrFile = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
-		// Now you can do whatever you need to do with it, for example copy somewhere
-		try {
-			FileUtils.copyFile(scrFile, new File("c:\\tmp\\screenshot.png"));
-			Logs.info("se tomo la screshoot");
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
-		*/
 	}
 
 	@Override

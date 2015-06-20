@@ -5,13 +5,6 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.util.Properties;
 
-/*
- *Class for get:
- *	Admin URL
- *	Tablet URL
- *	Google Chrome Driver Location
- */
-
 public class ConfigReader {
 	static Properties prop = new Properties();
 	static InputStream input = null;

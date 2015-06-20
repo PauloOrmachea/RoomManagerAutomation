@@ -1,6 +1,5 @@
 package roomManager.test.admin;
 
-import static org.junit.Assert.*;
 import org.openqa.selenium.*;
 import org.testng.annotations.AfterSuite;
 import org.testng.annotations.AfterTest;
@@ -36,41 +35,26 @@ public class CreateResource {
 	@Test
 	public void TestCreateResource() throws Exception {
 		
-		//1.-Variables for run the test case - need replace for a external data-driven
 		String username = ConfigReader.getRoomManagerUserName();
 		String password = ConfigReader.getRoomManagerPassword();
 		String resourceName = "SeleniumTest";
 		String resourceDisplayName = "SeleniumTest";
 		String resourceDescription = "Deleteme";
-//		String errorMessage = "The resource in not created";
-		
-		//2.-Instance the login page
 		LoginPage login = new LoginPage(driver);
-				
-		//3.-Method for login into Room Manager
 		AdminHomePage adminHomePage = login
 			.enterUserName(username)
 			.enterPassword(password)
 			.clickLoginButton();
-		
-		//4.-Method for Click in the resources button
 		ResourcesPage resources =  adminHomePage
 				.selectResourcesLink();
-		
-		//5.-Method for call the add resource page and introduce the resource name, display name, description
 		AddResourcesPage addResource = resources
 			.clickAddResourceButton()
 			.enterResourceName(resourceName)
 			.enterResourceDisplayName(resourceDisplayName)
 			.enterResourceDescription(resourceDescription);
-		
-		//6.-Method for Save the new resource
 		resources = addResource
 				.clickSaveResourceButton()
-		
-			//7.-This step search for the new resource and confirms if the existence of the new resource	
 			.searchResourceByName(resourceName);
-		//assertEquals(errorMessage, resources.getTableElementbyName(), resourceName);
 	}
 	
 } 

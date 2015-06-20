@@ -1,6 +1,5 @@
 package roomManager.test.admin;
 
-import static org.junit.Assert.*;
 import org.openqa.selenium.*;
 import org.testng.annotations.AfterSuite;
 import org.testng.annotations.AfterTest;

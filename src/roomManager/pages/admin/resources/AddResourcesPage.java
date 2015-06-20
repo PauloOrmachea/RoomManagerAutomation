@@ -24,7 +24,7 @@ public class AddResourcesPage {
 			.until(ExpectedConditions.presenceOfElementLocated(addResourceNameTextFieldLocator));
 		resourceNameTextField.clear();
 		resourceNameTextField.sendKeys(resourceName);
-		Logs.info("AddResources - type the  resourceName");
+		Logs.info("AddResourcesPage - type the  resourceName");
 		return this;
 	}
 	
@@ -33,7 +33,7 @@ public class AddResourcesPage {
 			.until(ExpectedConditions.presenceOfElementLocated(addResourceDisplayNameTextFieldLocator));
 		resourceDisplayNameTextField.clear();
 		resourceDisplayNameTextField.sendKeys(resourceDisplayName);
-		Logs.info("AddResources - type the resourceDisplayName");
+		Logs.info("AddResourcesPage - type the resourceDisplayName");
 		return this;
 	}
 	
@@ -42,7 +42,7 @@ public class AddResourcesPage {
 			.until(ExpectedConditions.presenceOfElementLocated(addResourceDescriptionTextFieldLocator));
 		resourceDescriptionAreaText.clear();
 		resourceDescriptionAreaText.sendKeys(resourceDescription);
-		Logs.info("AddResources - type the  resourceDescription");
+		Logs.info("AddResourcesPage - type the  resourceDescription");
 		return this;
 	}
 	
@@ -50,7 +50,7 @@ public class AddResourcesPage {
 		WebElement saveResourceButton = (new WebDriverWait(driver, 60))
 			.until(ExpectedConditions.presenceOfElementLocated(addResourceSaveButtonLocator));
 		saveResourceButton.click();
-		Logs.info("AddResources - click on the the save button");
+		Logs.info("AddResourcesPage - click on the the save button");
 		return new ResourcesPage(driver);
 	}
 }

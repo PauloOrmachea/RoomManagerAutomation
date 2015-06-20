@@ -19,7 +19,7 @@ public class DeleteLocationPage {
 	public LocationPage clickDeleteLocationButton(){
 		WebElement deleteLocationButton = (new WebDriverWait(driver, 60)).until(ExpectedConditions.presenceOfElementLocated(deleteLocationButtonLocator));
 		deleteLocationButton.click();
-		Logs.info("DeleteLocation - delete a location");
+		Logs.info("DeleteLocationPage - delete a location");
 		return new LocationPage(driver);
 	}
 }

@@ -31,44 +31,28 @@ public class CreateLocation {
 	  public void afterSuite(){
 			driver.quit();
 	  }
-/*	  private boolean isElementPresent(By by) {
-		    try {driver.findElement(by);
-		      return true;} catch (NoSuchElementException e) {return false;}
-		  }*/
 
-	@Test(priority=1)
+	@Test
 	public void TestCreateResource() throws Exception {
 		
-		//1.-Variables for run the test case - need replace for a external data-driven
 		String username = ConfigReader.getRoomManagerUserName();
 		String password = ConfigReader.getRoomManagerPassword();
 		String locationName = "SeleniumLocationTest";
 		String locationDisplayName = "SeleniumLocationTest";
 		String locationDescription = "Deleteme";
-		
-		//2.-Instance the login page
 		LoginPage login = new LoginPage(driver);
-				
-		//3.-Method for login into Room Manager
 		AdminHomePage adminHomePage = login
 			.enterUserName(username)
 			.enterPassword(password)
 			.clickLoginButton();
-		
-		//4.-Method for Click in the resources button
 		LocationPage location =  adminHomePage
 				.selectLocationsLink();
-		
-		//5.-Method for call the add resource page and introduce the resource name, display name, description
 		AddLocationPage addLocation = location
 			.clickAddLocationButton()
 			.enterLocationName(locationName)
 			.enterLocationDisplayName(locationDisplayName)
 			.enterLocationDescription(locationDescription);
-		
-		//6.-Method for Save the new resource
 		location = addLocation
 				.clickSaveLocationButton();
-		//Assert.assertTrue(isElementPresent(By.name(locationName)),"Location not created");
 	}
 } 
